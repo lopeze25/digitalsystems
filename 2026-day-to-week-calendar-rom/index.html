@@ -155,8 +155,12 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		<h1 class="wp-block-post-title">2026 Day-to-Week Calendar Calculator</h1>
 		<div class="entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained">
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Description: This tells you the day of the week. Input your month, input your day, and it will tell you if it landed on a Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, or Saturday in 2026. If the date does not exist (like February 30), an invalid LED turns on instead.
-<br>
-AI was used to help write up/code</p>
+</p>
+
+
+
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">AI Use:</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">I used AI to help write this page and the website code. </p>
 
 
 
@@ -192,9 +196,9 @@ AI was used to help write up/code</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">A user must be able to enter a month and a day. For example, 1100 01000 would be December 8, and the circuit should spit out the day of the week on its LED. So F7F6F5F4F3F2F1F0 = 0000 0100 (04 in hex). That shows that F2, for Tuesday, is on.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">So that means the first step is finding a minterm equation. The month is the top 4 bits and the day is the bottom 5 bits, so the minterm number is 32 × month + day. For example, 1100 01000 in binary is 392. Another example: 0111 00110 (July 6) is 230.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">So that means F2 (Tuesday) has 392 as a minterm, and no other LED should turn on. F1 (Monday) has 230 as a minterm, and no other LED should turn on.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">The nice part about this is no month has more than 31 days, so the day is exactly 5 bits, from 0 to 31! And 12 months fit in 4 bits.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">The nice part about this is no month has more than 31 days, so the day is exactly 5 bits, from 0 to 31. And 12 months fit in 4 bits.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">We can repeat that for every day in the calendar. The easiest way is this: all we need is the first day of the year. 2026 started on a Thursday. So we know 0001 00001 (33) is a Thursday, 0001 00010 (34) is a Friday, 0001 00011 (35) is a Saturday, 0001 00100 (36) is a Sunday, 0001 00101 (37) is a Monday, 0001 00110 (38) is a Tuesday, and so on.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Now we can just add 7 to those values! 0001 00110 (38) is a Tuesday. Add 7 in binary: 0001 01101 (45) is a Tuesday. 0001 10100 (52) is a Tuesday, and 0001 11011 (59) is a Tuesday. When adding 7 runs past the end of the month, it wraps into the next month: January 27 + 7 days is February 3, 0010 00011 (67), which is a Tuesday.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Now we can just add 7 to those values. 0001 00110 (38) is a Tuesday. Add 7 in binary: 0001 01101 (45) is a Tuesday. 0001 10100 (52) is a Tuesday, and 0001 11011 (59) is a Tuesday. When adding 7 runs past the end of the month, it wraps into the next month: January 27 + 7 days is February 3, 0010 00011 (67), which is a Tuesday.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px; font-weight: bold;">All Tuesdays in 2026:</p>
 <table style="font-family: 'Times New Roman', Times, serif; font-size: 25px; border-collapse: collapse; width: 100%;">
   <tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Month</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Binary (M3–M0 D4–D0)</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Minterm</th></tr>
@@ -322,6 +326,14 @@ endmodule</code></pre>
 
 
 <p class="wp-block-paragraph">.xdc</p>
+
+
+
+<p class="wp-block-paragraph">Video Demo:</p>
+
+
+
+<p class="wp-block-paragraph">Schematics (KiCad):</p>
 
 
 
