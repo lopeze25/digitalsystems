@@ -168,7 +168,8 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">AI Use:</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">I used AI to help write this page and the website code. </p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">I used AI to help write this page and the website code. <br>
+I also used AI to debug my Verilog Code. While I am familiar with Verilog, and how FPGAs work it is a still a learning process.</p>
 
 
 
@@ -202,14 +203,14 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">Specifications:</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">A user must be able to enter a month and a day. For example, 1100 01000 would be December 8, and the circuit should spit out the day of the week on its LED. So F7F6F5F4F3F2F1F0 = 0000 0100 (04 in hex). That shows that F2, for Tuesday, is on.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">So that means the first step is finding a minterm equation. The month is the top 4 bits and the day is the bottom 5 bits, so the minterm number is 32 × month + day. For example, 1100 01000 in binary is 392. Another example: 0111 00110 (July 6) is 230.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">So that means the first step is finding a minterm equation. The month is the top 4 bits and the day is the bottom 5 bits. For example, 1100 01000 in binary is 392 in decimal. Another example: 0111 00110 (July 6) is 230.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">So that means F2 (Tuesday) has 392 as a minterm, and no other LED should turn on. F1 (Monday) has 230 as a minterm, and no other LED should turn on.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">The nice part about this is no month has more than 31 days, so the day is exactly 5 bits, from 0 to 31. And 12 months fit in 4 bits.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">We can repeat that for every day in the calendar. The easiest way is this: all we need is the first day of the year. 2026 started on a Thursday. So we know 0001 00001 (33) is a Thursday, 0001 00010 (34) is a Friday, 0001 00011 (35) is a Saturday, 0001 00100 (36) is a Sunday, 0001 00101 (37) is a Monday, 0001 00110 (38) is a Tuesday, and so on.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Now we can just add 7 to those values. 0001 00110 (38) is a Tuesday. Add 7 in binary: 0001 01101 (45) is a Tuesday. 0001 10100 (52) is a Tuesday, and 0001 11011 (59) is a Tuesday. When adding 7 runs past the end of the month, it wraps into the next month: January 27 + 7 days is February 3, 0010 00011 (67), which is a Tuesday.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px; font-weight: bold;">All Tuesdays in 2026:</p>
 <table style="font-family: 'Times New Roman', Times, serif; font-size: 25px; border-collapse: collapse; width: 100%;">
-  <tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Month</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Binary (M3–M0 D4–D0)</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Minterm</th></tr>
+  <tbody><tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Month</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Binary (M3–M0 D4–D0)</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Minterm</th></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">January</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">0001 00110<br>0001 01101<br>0001 10100<br>0001 11011</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">38<br>45<br>52<br>59</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">February</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">0010 00011<br>0010 01010<br>0010 10001<br>0010 11000</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">67<br>74<br>81<br>88</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">March</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">0011 00011<br>0011 01010<br>0011 10001<br>0011 11000<br>0011 11111</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">99<br>106<br>113<br>120<br>127</td></tr>
@@ -222,7 +223,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">October</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">1010 00110<br>1010 01101<br>1010 10100<br>1010 11011</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">326<br>333<br>340<br>347</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">November</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">1011 00011<br>1011 01010<br>1011 10001<br>1011 11000</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">355<br>362<br>369<br>376</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">December</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">1100 00001<br>1100 01000<br>1100 01111<br>1100 10110<br>1100 11101</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">385<br>392<br>399<br>406<br>413</td></tr>
-</table>
+</tbody></table>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">FINAL sum of minterms:</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">F2 (Tuesday) = Σm(38, 45, 52, 59, 67, 74, 81, 88, 99, 106, 113, 120, 127, 135, 142, 149, 156, 165, 172, 179, 186, 194, 201, 208, 215, 222, 231, 238, 245, 252, 260, 267, 274, 281, 289, 296, 303, 310, 317, 326, 333, 340, 347, 355, 362, 369, 376, 385, 392, 399, 406, 413)</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">We can repeat this for every output:</p>
@@ -233,7 +234,14 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">F5 (Friday) = Σm(34, 41, 48, 55, 62, 70, 77, 84, 91, 102, 109, 116, 123, 131, 138, 145, 152, 161, 168, 175, 182, 189, 197, 204, 211, 218, 227, 234, 241, 248, 255, 263, 270, 277, 284, 292, 299, 306, 313, 322, 329, 336, 343, 350, 358, 365, 372, 379, 388, 395, 402, 409)</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">F6 (Saturday) = Σm(35, 42, 49, 56, 63, 71, 78, 85, 92, 103, 110, 117, 124, 132, 139, 146, 153, 162, 169, 176, 183, 190, 198, 205, 212, 219, 228, 235, 242, 249, 257, 264, 271, 278, 285, 293, 300, 307, 314, 323, 330, 337, 344, 351, 359, 366, 373, 380, 389, 396, 403, 410)</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">. F7 is out invalid output. That is essentially everything that is not listed so that all inputs corresponding from 0-511 can be accounted for. F7 (Invalid) = Σm(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 64, 93, 94, 95, 96, 128, 159, 160, 192, 223, 224, 256, 288, 319, 320, 352, 383, 384, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511)</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">These equations are too big to implement with digital logic chips (343 product terms even after minimizing). However, ROM can simplify this for us. Inside the ROM, a decoder already makes every minterm from 0 to 511, so we never have to minimize. We only choose which minterms turn on each LED.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">Design Choices:</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">These equations are too big to build with logic chips: even after minimizing, they need 343 product terms. A ROM avoids that. Its built-in decoder already makes every minterm from 0 to 511, so I never had to minimize; I only chose which minterms turn on each LED.
+
+<br> Decision: What EPROM to use? 27c010 would fit. Since I do not have a 27C010 on hand I choice to use my knowledge about FPGAs to implement this.
+
+Important disclaimer: The Basys3 uses SRAM. (Flash memory could be used to load up a program when powered on). So that means it will be a FPGA programmed to act as a 27C010 ROM.
+Lets find what should go in each Address if we did use a 27C010.
+</p>
 
 
 
@@ -293,6 +301,14 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 <p class="wp-block-paragraph"><strong>Why an FPGA?</strong> I didn’t have a 27C010 chip or an EPROM programmer, and I am familar with FPGAs. I used the Artix-7 FPGA on a Basys 3 board as a stand-in for a 27C010 EPROM. My Verilog module is similar to the real chip: 9 address inputs, 8 data outputs, and its contents come from a 512-line file (calendar2026.mem). Each Address is now a line number and it is same bytes I would program into a real EPROM. Only the memory is inside the FPGA; the switches and LEDs are on the breadboard and connect through the board’s Pmod ports. An FPGA is programmable logic, which is this project’s topic, and swapping in a real EPROM later would change the chip, not the design. </p>
+
+
+
+<p class="wp-block-paragraph">Below is an example of the FPGA’s Pmod ports which stands for “Peripheral Module”. They can be configured as either Input or Output. </p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="726" height="243" src="/digitalsystems/wp-content/uploads/2026/11/image-9.png" alt="" class="wp-image-151" srcset="/digitalsystems/wp-content/uploads/2026/11/image-9.png 726w, /digitalsystems/wp-content/uploads/2026/11/image-9-300x100.png 300w" sizes="(max-width: 726px) 100vw, 726px"></figure>
 
 
 
@@ -952,7 +968,7 @@ set_property CFGBVS VCCO [current_design]</code></pre>
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="328" src="/digitalsystems/wp-content/uploads/2026/11/image-6-1024x328.png" alt="" class="wp-image-145" srcset="/digitalsystems/wp-content/uploads/2026/11/image-6-1024x328.png 1024w, /digitalsystems/wp-content/uploads/2026/11/image-6-300x96.png 300w, /digitalsystems/wp-content/uploads/2026/11/image-6-768x246.png 768w, /digitalsystems/wp-content/uploads/2026/11/image-6.png 1488w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="328" src="/digitalsystems/wp-content/uploads/2026/11/image-6-1024x328.png" alt="" class="wp-image-145" srcset="/digitalsystems/wp-content/uploads/2026/11/image-6-1024x328.png 1024w, /digitalsystems/wp-content/uploads/2026/11/image-6-300x96.png 300w, /digitalsystems/wp-content/uploads/2026/11/image-6-768x246.png 768w, /digitalsystems/wp-content/uploads/2026/11/image-6.png 1488w" sizes="auto, (max-width: 1024px) 100vw, 1024px"></figure>
 
 
 
@@ -976,7 +992,15 @@ set_property CFGBVS VCCO [current_design]</code></pre>
 
 
 
+<p class="wp-block-paragraph"><strong>Input Pmod pins</strong>:</p>
+
+
+
 <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="737" height="731" src="/digitalsystems/wp-content/uploads/2026/11/image-4.png" alt="" class="wp-image-142" srcset="/digitalsystems/wp-content/uploads/2026/11/image-4.png 737w, /digitalsystems/wp-content/uploads/2026/11/image-4-300x298.png 300w, /digitalsystems/wp-content/uploads/2026/11/image-4-150x150.png 150w" sizes="auto, (max-width: 737px) 100vw, 737px"></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Output Pmod Pins:</strong></p>
 
 
 

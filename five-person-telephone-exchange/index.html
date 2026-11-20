@@ -166,6 +166,14 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="513" height="718" src="/digitalsystems/wp-content/uploads/2026/11/image-10.png" alt="" class="wp-image-153" srcset="/digitalsystems/wp-content/uploads/2026/11/image-10.png 513w, /digitalsystems/wp-content/uploads/2026/11/image-10-214x300.png 214w" sizes="(max-width: 513px) 100vw, 513px"></figure>
+
+
+
+<p class="wp-block-paragraph">This shows Caller 1 connected to Caller 2 and vice versa. It also shows Caller 4 collected to Caller 3. It also shows caller 5 calling in caller 1. If it Caller 5 was to hit dial, it wouldnt connect as shown by the live Error message (Asynchronous output/Doesnt depend on dial). </p>
+
+
+
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">Importance and Topic:</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Telephone switches in offices, hotels, and hospitals route each call to the right line. Operators did this by hand in the 1870s; Bell&apos;s 1ESS automated it in 1965. This fulfills the MUX/DEMUX topic: MUXes read the state of a selected telephone, and DEMUXes select which telephones are updated.</p>
 
@@ -180,20 +188,20 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">There are 8 inputs and 11 outputs.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px; font-weight: bold;">Inputs:</p>
 <table style="font-family: 'Times New Roman', Times, serif; font-size: 25px; border-collapse: collapse; width: 100%;">
-  <tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Input</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Device</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Function</th></tr>
+  <tbody><tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Input</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Device</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Function</th></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">S2, S1, S0</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Switches</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Caller (source) code; S2 is the MSB</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">D2, D1, D0</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Switches</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Telephone being called (destination); D2 is the MSB</td></tr>
-  <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">CLK</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Button</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Manual clock; each press completes one call</td></tr>
+  <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Dial Button/CLK</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Button</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Manual clock; each press completes one call</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">RESET</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Button</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Clears every telephone to 000</td></tr>
-</table>
+</tbody></table>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;">Telephone code: 000 = none (hang up), 001 = A, 010 = B, 011 = C, 100 = D, 101 = E; 110 and 111 are unused.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px; font-weight: bold;">Outputs:</p>
 <table style="font-family: 'Times New Roman', Times, serif; font-size: 25px; border-collapse: collapse; width: 100%;">
-  <tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Output</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Device</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Function</th></tr>
+  <tbody><tr><th style="border: 1px solid black; padding: 8px; text-align: left;">Output</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Device</th><th style="border: 1px solid black; padding: 8px; text-align: left;">Function</th></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">F<sub>A</sub>–F<sub>E</sub></td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Hex displays (5)</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Partner of each telephone (0 = free)</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">B<sub>A</sub>–B<sub>E</sub></td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">LEDs (5)</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Busy indicator for each telephone</td></tr>
   <tr><td style="border: 1px solid black; padding: 8px; vertical-align: top;">ERROR</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Sixteen-segment display</td><td style="border: 1px solid black; padding: 8px; vertical-align: top;">Star when the call would be rejected (busy destination or calling itself)</td></tr>
-</table>
+</tbody></table>
 
 
 
@@ -223,19 +231,30 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="968" height="682" src="/digitalsystems/wp-content/uploads/2026/11/image-1.png" alt="" class="wp-image-115" srcset="/digitalsystems/wp-content/uploads/2026/11/image-1.png 968w, /digitalsystems/wp-content/uploads/2026/11/image-1-300x211.png 300w, /digitalsystems/wp-content/uploads/2026/11/image-1-768x541.png 768w" sizes="(max-width: 968px) 100vw, 968px"></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="968" height="682" src="/digitalsystems/wp-content/uploads/2026/11/image-1.png" alt="" class="wp-image-115" srcset="/digitalsystems/wp-content/uploads/2026/11/image-1.png 968w, /digitalsystems/wp-content/uploads/2026/11/image-1-300x211.png 300w, /digitalsystems/wp-content/uploads/2026/11/image-1-768x541.png 768w" sizes="(max-width: 968px) 100vw, 968px"></figure>
 
 
 
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: bold;">Problems Encountered leading to Design Choices:</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">1. Each telephone stores its partner&apos;s number.</span> I compared this with one flip-flop per pair of telephones (10 pairs). Storing the partner&apos;s code lets the display show it directly and makes finding the old partner one MUX read.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">1. How will each telephone stores its partner’s number?</span> I chose D flip flops. Storing the partner’s code lets the display show it directly and makes finding the old partner one MUX read.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">2. One shared read MUX and busy MUX.</span> The switches select which telephone is read, so adding a telephone adds a MUX input instead of a new circuit.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">3. One clock edge per call.</span> The old partner is read before the edge, so the clear and both writes happen on the same edge. A two-step version would need a state machine and a temporary register.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">3. One clock edge per call.</span> The Clock button is our Dial button. The old partner is read before the edge, but the clear and both writes happen on the same edge. .</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">4. Clearing through the register MUX.</span> My first version cleared through the flip-flop reset pin, which acted immediately and cut calls while I was still setting the switches. Through the MUX, the clear waits for CLK like every other update.</p>
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">5. 000 means free and hang up.</span> A cleared register already reads as free, and dialing 000 hangs up with one OR gate: WRITE = ACCEPT + Z0.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">6. Busy is the OR of the register bits.</span> My separate busy flip-flop stayed on after a hang-up. The OR can never disagree with the register.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">6. Busy is the OR of the register bits.</span> Originally D FLIP FLOPS were used to store the BUSY FLAGS. But since I realized OR can never disagree with the register. It was removed in favor of combinational logic.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="756" height="726" src="/digitalsystems/wp-content/uploads/2026/11/image-12.png" alt="" class="wp-image-156" srcset="/digitalsystems/wp-content/uploads/2026/11/image-12.png 756w, /digitalsystems/wp-content/uploads/2026/11/image-12-300x288.png 300w" sizes="(max-width: 756px) 100vw, 756px"></figure>
+
+
+
 <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">7. MUXes read, DEMUXes write.</span> Reading one telephone is many-to-one and writing one is one-to-many. The DEMUX data input acts as the enable (ACCEPT or WRITE), so no extra AND gates are needed.</p>
-<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">8. SAME check as a DEMUX and MUX pair.</span> Two parts instead of three XNORs and an AND, and the DEMUX&apos;s 000 output (Z0) detects a hang-up for free.</p>
+<p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;"><span style="font-weight: 700;">8. SAME check as a DEMUX and MUX pair.</span> Two parts instead of three XNORs and an AND, and the DEMUX’s 000 output (Z0) detects a hang-up for free. See below pic for implementation. </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="393" height="342" src="/digitalsystems/wp-content/uploads/2026/11/image-11.png" alt="" class="wp-image-155" srcset="/digitalsystems/wp-content/uploads/2026/11/image-11.png 393w, /digitalsystems/wp-content/uploads/2026/11/image-11-300x261.png 300w" sizes="auto, (max-width: 393px) 100vw, 393px"></figure>
 
 
 
@@ -374,7 +393,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
-<p class="wp-block-paragraph">Video:</p>
+<p class="wp-block-paragraph"></p>
 
 
 
